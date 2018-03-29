@@ -57,7 +57,7 @@ namespace RNViewShot
 
             try
             {
-                if ("file" == result)
+                if ("tmpfile" == result || "file" == result)
                 {
                     using (var ras = new InMemoryRandomAccessStream())
                     {
@@ -163,7 +163,7 @@ namespace RNViewShot
         private async Task<StorageFile> GetStorageFile()
         {
             var storageFolder = ApplicationData.Current.LocalFolder;
-            var fileName = string.IsNullOrEmpty(path) ? path : Path.ChangeExtension(Guid.NewGuid().ToString(), extension);                
+            var fileName = string.IsNullOrEmpty(path) ? Path.ChangeExtension(Guid.NewGuid().ToString(), extension) : path;                
             return await storageFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
         }
     }

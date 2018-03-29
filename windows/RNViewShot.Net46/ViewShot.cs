@@ -54,7 +54,7 @@ namespace RNViewShot
             {
                 BitmapEncoder image = CaptureView(view);
 
-                if ("file" == result)
+                if ("tmpfile" == result || "file" == result)
                 {
                     string filePath = GetFilePath();
                     Stream stream = File.Create(filePath);
