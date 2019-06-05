@@ -107,7 +107,7 @@ RCT_EXPORT_METHOD(captureRef:(nonnull NSNumber *)target
 
     UIGraphicsBeginImageContextWithOptions(size, NO, 0);
     
-    success = [rendered drawViewHierarchyInRect:(CGRect){CGPointZero, size} afterScreenUpdates:YES];
+    success = [rendered drawViewHierarchyInRect:(CGRect){CGPointZero, size} afterScreenUpdates:NO];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
